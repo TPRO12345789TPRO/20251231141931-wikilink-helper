@@ -6,7 +6,8 @@
 - **Feature**: **GitHub Auto-Navigate**. On GitHub and Gist, you can now toggle "Click Action" to "Auto-Navigate". This will simulate pressing `t`, typing the ID, and pressing Enter.
 - **Feature**: Added extension icons (16, 48, 128px).
 - **Update**: Extension now works on **all websites** for standard "Copy" functionality.
-- **Privacy**: Added Privacy Policy.
+- **Privacy**: Added Privacy Policy (`PRIVACY.md`) and publishing guide (`PUBLISHING.md`).
+- **DevOps**: Added cross-platform build scripts (`scripts/pack_crx.py`) to generate CRX and ZIP artifacts.
 
 ## v1.2.2 (2025-12-31)
 **Link Format Support**

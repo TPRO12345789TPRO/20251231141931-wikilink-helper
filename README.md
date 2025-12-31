@@ -67,6 +67,13 @@ This project is part of the **[Kardenwort](https://github.com/kardenwort)** envi
 
 [Return to Top](#table-of-contents)
 
+## Development
+To build the extension locally (generates `.crx` and `.zip` in `dist/`):
+- **Windows**: Run `scripts\build.cmd`
+- **Linux/macOS**: Run `scripts/build.sh`
+
+See [PUBLISHING.md](PUBLISHING.md) for instructions on how to publish to the Chrome Web Store.
+
 ## License
 MIT License. See LICENSE file for details.
 
