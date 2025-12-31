@@ -1,18 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Load saved setting
-    chrome.storage.local.get(['copyMode'], (result) => {
+    // Load saved settings
+    chrome.storage.local.get(['copyMode', 'linkFormat'], (result) => {
+        // Load copyMode
         const mode = result.copyMode || 'id';
-        const radio = document.querySelector(`input[name="copyMode"][value="${mode}"]`);
-        if (radio) {
-            radio.checked = true;
+        const modeRadio = document.querySelector(`input[name="copyMode"][value="${mode}"]`);
+        if (modeRadio) {
+            modeRadio.checked = true;
+        }
+
+        // Load linkFormat
+        const format = result.linkFormat || 'auto';
+        const formatRadio = document.querySelector(`input[name="linkFormat"][value="${format}"]`);
+        if (formatRadio) {
+            formatRadio.checked = true;
         }
     });
 
-    // Save setting on change
+    // Save copyMode on change
     document.querySelectorAll('input[name="copyMode"]').forEach(radio => {
         radio.addEventListener('change', (e) => {
             if (e.target.checked) {
                 chrome.storage.local.set({ copyMode: e.target.value });
+            }
+        });
+    });
+
+    // Save linkFormat on change
+    document.querySelectorAll('input[name="linkFormat"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                chrome.storage.local.set({ linkFormat: e.target.value });
             }
         });
     });

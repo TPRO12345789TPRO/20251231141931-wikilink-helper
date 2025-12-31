@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Wikilink Settings</title>
   <style>
@@ -8,22 +9,27 @@
       padding: 10px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+
     h3 {
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 16px;
     }
+
     .option {
       margin-bottom: 8px;
     }
+
     label {
       cursor: pointer;
       display: flex;
       align-items: center;
     }
+
     input[type="radio"] {
       margin-right: 8px;
     }
+
     .description {
       font-size: 12px;
       color: #666;
@@ -32,9 +38,10 @@
     }
   </style>
 </head>
+
 <body>
   <h3>Copy Behavior</h3>
-  
+
   <div class="option">
     <label>
       <input type="radio" name="copyMode" value="id" checked>
@@ -58,11 +65,40 @@
     </label>
     <div class="description">e.g. "Displayed Text"</div>
   </div>
-  
+
   <p style="font-size: 11px; color: #999; margin-top: 15px;">
     Changes apply to newly loaded pages or after refresh.
   </p>
 
+  <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+  <h3>Link Format</h3>
+
+  <div class="option">
+    <label>
+      <input type="radio" name="linkFormat" value="auto" checked>
+      Auto (Recommended)
+    </label>
+    <div class="description">Detects format based on ZID position</div>
+  </div>
+
+  <div class="option">
+    <label>
+      <input type="radio" name="linkFormat" value="obsidian">
+      Standard / Obsidian
+    </label>
+    <div class="description">Always <code>[[ID|Text]]</code></div>
+  </div>
+
+  <div class="option">
+    <label>
+      <input type="radio" name="linkFormat" value="dendron">
+      Dendron
+    </label>
+    <div class="description">Always <code>[[Text|ID]]</code></div>
+  </div>
+
   <script src="popup.js"></script>
 </body>
+
 </html>

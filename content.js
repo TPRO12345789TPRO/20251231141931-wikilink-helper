@@ -1,6 +1,16 @@
 // Wikilink Helper Content Script
 
 const ID_PATTERN = /^\d{14}-/;
+let currentLinkFormat = 'auto'; // Default
+
+// Initialize settings
+chrome.storage.local.get(['linkFormat'], (result) => {
+    if (result.linkFormat) {
+        currentLinkFormat = result.linkFormat;
+    }
+    // We can re-run process if we want dynamic updates without reload, 
+    // but for now, we'll rely on reload as stated in popup.
+});
 
 // Utility to create the toast element
 function createToast() {
@@ -36,12 +46,22 @@ function parseWikilink(rawText) {
     const first = parts[0];
     const second = parts.slice(1).join('|');
 
-    // Dendron Check: if second part looks like ID, use that
-    if (ID_PATTERN.test(second)) {
+    // Logic based on Link Format setting
+    if (currentLinkFormat === 'obsidian') {
+        // Standard: [[ID|Text]]
+        return { id: first, text: second };
+    } else if (currentLinkFormat === 'dendron') {
+        // Dendron: [[Text|ID]]
         return { id: second, text: first };
+    } else {
+        // Auto (Default)
+        // Dendron Check: if second part looks like ID, use that
+        if (ID_PATTERN.test(second)) {
+            return { id: second, text: first };
+        }
+        // Standard: id|text, or fallback
+        return { id: first, text: second };
     }
-    // Standard: id|text, or fallback
-    return { id: first, text: second };
 }
 
 // Handle click event on the link
@@ -124,6 +144,13 @@ function processNode(node) {
         Array.from(node.childNodes).forEach(processNode);
     }
 }
+
+// Listen for storage changes to update current format immediately for future parsing
+chrome.storage.onChanged.addListener((changes, namespace) => {
+    if (namespace === 'local' && changes.linkFormat) {
+        currentLinkFormat = changes.linkFormat.newValue;
+    }
+});
 
 // Run initially
 processNode(document.body);
