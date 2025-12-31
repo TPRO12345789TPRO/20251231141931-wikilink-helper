@@ -82,4 +82,20 @@ if __name__ == "__main__":
     parser.add_argument("--key", default="key.pem", help="Path to private key")
     args = parser.parse_args()
     
-    pack_crx(args.source, args.output, args.key)
+    import datetime
+    
+    # Generate timestamp
+    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    
+    # If output is a directory, construct filename. If it's a file, prepend timestamp to basename.
+    # Actually, simplistic approach: explicit output path is usually expected.
+    # But user wants "2025...-wikilink-helper...crx"
+    
+    dir_name = os.path.dirname(args.output)
+    base_name = os.path.basename(args.output)
+    
+    # Prepend timestamp
+    new_name = f"{timestamp}-{base_name}"
+    final_output = os.path.join(dir_name, new_name)
+    
+    pack_crx(args.source, final_output, args.key)
