@@ -37,12 +37,10 @@ class GitHubHandler extends window.BaseHandler {
             // 5. Dispatch input event so React/Framework picks it up
             input.dispatchEvent(new Event('input', { bubbles: true }));
 
-            // Note: We don't press Enter automatically because GitHub search usually updates live 
-            // and the user might want to select the correct file if there are duplicates.
-            // But if user wants full auto:
-            // setTimeout(() => {
-            //     input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true }));
-            // }, 500);
+            // Wait for results then select first result
+            setTimeout(() => {
+                input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true }));
+            }, 500);
         } else {
             console.error('GitHub file finder input not found');
         }
