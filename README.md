@@ -20,7 +20,8 @@ This Chrome extension finds wikilink patterns like `[[20251231140239-target-page
 [Return to Top](#wikilink-helper-extension)
 
 ## Features
-- **Smart Parsing**: Detects standard `[[ID|Text]]` and Dendron-style `[[Text|ID]]` links.
+- **Smart Parsing**: Detects standard `[[ID|Text]]` and reverse `[[Text|ID]]` links.
+- **Configurable Formats**: Support for `Standard (ID|Text)` and `Reverse (Text|ID)` formats.
 - **Configurable Copying**:
   - **Copy ID**: `20251231140239-target-page` (Default)
   - **Copy Both**: `20251231140239-target-page Displayed Text`

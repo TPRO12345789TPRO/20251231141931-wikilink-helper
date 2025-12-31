@@ -47,11 +47,11 @@ function parseWikilink(rawText) {
     const second = parts.slice(1).join('|');
 
     // Logic based on Link Format setting
-    if (currentLinkFormat === 'obsidian') {
+    if (currentLinkFormat === 'standard') {
         // Standard: [[ID|Text]]
         return { id: first, text: second };
-    } else if (currentLinkFormat === 'dendron') {
-        // Dendron: [[Text|ID]]
+    } else if (currentLinkFormat === 'reverse') {
+        // Reverse: [[Text|ID]] (e.g. Dendron)
         return { id: second, text: first };
     } else {
         // Auto (Default)
