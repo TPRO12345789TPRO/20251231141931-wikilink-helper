@@ -1,6 +1,7 @@
 # Wikilink Helper Extension
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/voothi/20251231141931-wikilink-helper) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](https://github.com/voothi/20251231141931-wikilink-helper)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Detects wikilinks on web pages (e.g., GitHub), displays them readably, and allows quick copying of target IDs or descriptions for easy navigation and searching.
 

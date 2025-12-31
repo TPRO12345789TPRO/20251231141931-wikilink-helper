@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.2.2 (2025-12-31)
+**Link Format Support**
+
+- **Feature**: Added "Link Format" setting to support explicit wikilink parsing.
+  - **Auto**: Smart detection based on ZID pattern (default).
+  - **Standard**: Forces `[[ID|Text]]` parsing.
+  - **Reverse**: Forces `[[Text|ID]]` parsing.
+- **Improvement**: Renamed "Dendron" mode to "Reverse" and "Obsidian" to "Standard" for clarity.
+
 ## v1.0.0 (2025-12-31)
 **Initial Release**
 
