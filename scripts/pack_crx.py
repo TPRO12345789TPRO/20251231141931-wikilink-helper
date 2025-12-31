@@ -5,7 +5,33 @@ import subprocess
 import argparse
 import sys
 
-CHROME_PATH = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+def get_chrome_path():
+    if sys.platform == "win32":
+        paths = [
+            r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+            r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+            os.path.expandvars(r"%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe")
+        ]
+        for p in paths:
+            if os.path.exists(p):
+                return p
+    elif sys.platform == "darwin":
+        path = r"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        if os.path.exists(path):
+            return path
+    elif sys.platform.startswith("linux"):
+        for name in ["google-chrome", "chromium", "chromium-browser"]:
+            path = shutil.which(name)
+            if path:
+                return path
+    return None
+
+CHROME_PATH = get_chrome_path()
+
+if not CHROME_PATH:
+    print("Error: Chrome executable not found.")
+    sys.exit(1)
 
 def pack_crx(source_dir, output_path, key_path):
     # Prepare a clean build directory to avoid packing unwanted files
