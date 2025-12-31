@@ -44,18 +44,19 @@
                     const rawMatch = match[0];
                     const linkData = window.WikilinkParser.parse(rawMatch, currentSettings.linkFormat);
 
-                    const span = document.createElement('span');
-                    span.className = 'wikilink-helper';
-                    span.textContent = linkData.text;
-                    span.title = `ID: ${linkData.id}\nClick to ${currentSettings.clickAction === 'navigate' ? 'Navigate' : 'Copy'}`;
+                    const link = document.createElement('a');
+                    link.className = 'wikilink-helper';
+                    link.textContent = linkData.text;
+                    link.href = 'javascript:void(0)';
+                    link.title = `ID: ${linkData.id}\nClick to ${currentSettings.clickAction === 'navigate' ? 'Navigate' : 'Copy'}`;
 
-                    span.addEventListener('click', (e) => {
+                    link.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         activeHandler.handleClick(linkData, currentSettings);
                     });
 
-                    fragment.appendChild(span);
+                    fragment.appendChild(link);
                     lastIndex = regex.lastIndex;
                 }
 
@@ -67,7 +68,7 @@
             }
         } else if (node.nodeType === 1) { // Element node
             const tagName = node.tagName.toLowerCase();
-            if (tagName === 'script' || tagName === 'style' || tagName === 'textarea' || tagName === 'input' || node.classList.contains('wikilink-helper')) {
+            if (tagName === 'script' || tagName === 'style' || tagName === 'textarea' || tagName === 'input' || tagName === 'a' || tagName === 'button' || node.classList.contains('wikilink-helper')) {
                 return;
             }
             Array.from(node.childNodes).forEach(processNode);
