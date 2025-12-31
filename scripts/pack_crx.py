@@ -92,6 +92,14 @@ def pack_crx(source_dir, output_path, key_path):
         
         shutil.move(generated_crx, output_path)
         print(f"Moved to: {output_path}")
+
+        # Also create a Source ZIP for Web Store
+        zip_output_path = output_path.replace(".crx", ".zip")
+        if os.path.exists(zip_output_path):
+            os.remove(zip_output_path)
+        
+        print(f"Creating source zip: {zip_output_path}")
+        shutil.make_archive(zip_output_path.replace(".zip", ""), 'zip', build_dir)
         
         # Cleanup
         shutil.rmtree(build_dir)
