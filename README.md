@@ -12,7 +12,8 @@ Detects wikilinks on web pages (e.g., GitHub), displays them readably, and allow
 - [Installation](#installation)
 - [Usage](#usage)
 - [Privacy & Site Access](#privacy--site-access)
-- [Kardenwort](#kardenwort)
+- [Kardenwort Ecosystem](#kardenwort-ecosystem)
+- [Development](#development)
 - [License](#license)
 
 ---
@@ -97,6 +98,8 @@ To build the extension locally (generates `.crx` and `.zip` in `dist/`):
 - **Linux/macOS**: Run `scripts/build.sh`
 
 See [PUBLISHING.md](docs/PUBLISHING.md) for instructions on how to publish to the Chrome Web Store.
+
+**Official Extension ID**: `mekebojdkoolcckoibjanfhfckknklhm`
 
 ## License
 MIT License. See LICENSE file for details.
