@@ -59,16 +59,16 @@ def pack_crx(source_dir, output_path, key_path):
         if os.path.exists(src):
             shutil.copytree(src, os.path.join(build_dir, root_item))
     
-    # # Strip "key" from manifest.json in the build directory to avoid Web Store errors
-    # import json
-    # manifest_path = os.path.join(build_dir, "manifest.json")
-    # if os.path.exists(manifest_path):
-    #     with open(manifest_path, 'r', encoding='utf-8') as f:
-    #         manifest = json.load(f)
-    #     if "key" in manifest:
-    #         del manifest["key"]
-    #     with open(manifest_path, 'w', encoding='utf-8') as f:
-    #         json.dump(manifest, f, indent=2)
+    # Strip "key" from manifest.json in the build directory to avoid Web Store errors
+    import json
+    manifest_path = os.path.join(build_dir, "manifest.json")
+    if os.path.exists(manifest_path):
+        with open(manifest_path, 'r', encoding='utf-8') as f:
+            manifest = json.load(f)
+        if "key" in manifest:
+            del manifest["key"]
+        with open(manifest_path, 'w', encoding='utf-8') as f:
+            json.dump(manifest, f, indent=2)
 
     # Ensure key exists absolute path
     abs_key_path = os.path.abspath(key_path)
