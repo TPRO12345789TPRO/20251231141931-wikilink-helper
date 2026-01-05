@@ -1,6 +1,7 @@
 # Wikilink Helper Extension
 
 [![Version](https://img.shields.io/badge/version-v1.3.2-blue)](https://github.com/voothi/20251231141931-wikilink-helper)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mekebojdkoolcckoibjanfhfckknklhm.svg)](https://chromewebstore.google.com/detail/wikilink-helper/mekebojdkoolcckoibjanfhfckknklhm)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Detects wikilinks on web pages (e.g., GitHub), displays them readably, and allows quick copying of target IDs or descriptions for easy navigation and searching.
@@ -35,13 +36,18 @@ This Chrome extension finds wikilink patterns like `[[20251231140239-target-page
 
 ## Installation
 
-### Option 1: Drag and Drop (Easiest)
+### Option 1: Chrome Web Store (Recommended)
+1. Go to the [Wikilink Helper on Chrome Web Store](https://chromewebstore.google.com/detail/wikilink-helper/mekebojdkoolcckoibjanfhfckknklhm).
+2. Click **Add to Chrome**.
+3. Confirm the installation.
+
+### Option 2: Drag and Drop
 1. Download the latest `.zip` file from the `dist/` folder (or releases).
 2. Open Chrome and navigate to `chrome://extensions/`.
 3. Enable **Developer mode** (toggle in the top right).
 4. Drag and drop the `.zip` file onto the extensions page.
 
-### Option 2: Load Unpacked
+### Option 3: Load Unpacked
 1. Download and **unzip** the release archive.
 2. Open Chrome and navigate to `chrome://extensions/`.
 3. Enable **Developer mode** (toggle in the top right).
